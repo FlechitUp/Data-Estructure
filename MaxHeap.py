@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import math
 
-myH = [5,12,64,1,37,90,91,97,]
+myH = [5,12,64,1,37,90,91,97]
 
 def getLeftSon(pos):
     value = pos * 2 + 1
@@ -35,11 +35,19 @@ def maxHeap(i):  #i  start postion
             myH[j] = maxSon
             myH[sPos] = father
             maxHeap(sPos)
-    #print(myH)
     return myH
 
-            
+def insertHeap(elemt):
+    myH.append(elemt)
+    i2 = math.ceil(len(myH)/2)-1
+    if getLeftSon(i2)[0] < getRightSon(i2)[0]:
+        print('ok')
+        return  myH
+    return maxHeap(i2)
+               
 if __name__ == "__main__":
     i = math.ceil(len(myH)/2)-1 #start position
     maxHeap(i)
+    print(myH)
+    insertHeap(8)
     print(myH)
