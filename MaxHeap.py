@@ -41,7 +41,6 @@ def insertHeap(elemt):
     myH.append(elemt)
     i2 = math.ceil(len(myH)/2)-1
     if getLeftSon(i2)[0] < getRightSon(i2)[0]:
-        print('ok')
         return  myH
     return maxHeap(i2)
                
